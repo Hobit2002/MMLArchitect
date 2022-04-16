@@ -1,0 +1,14 @@
+1. normalizeModelSelection:generate normalized data
+    * save train_x and test_x
+    * for each modKey save its train_y, previous modKeys, test_y and legend for it
+2. undersampler:for each modKey
+    2.1. delete duplicite rows of most dominant models and to exclude underrepresent models
+        * results should have probability between 0.05 and 0.6
+        * create statistics how much are different models used
+        * remove rows with columns that are not enough represented (you have to load data from previous modKeys)
+        * remove rows with inappropriately high column representation(but not blank)
+        * save transformed dataset
+3.for each modKey:
+    3.1. create copy of buildModel script
+    3.2. copy of buildModel:train model which takes appropriate x row and outputs of previous models as input and returns submodel/endhere
+    3.3. adjust copy algorithm to this modKey 
